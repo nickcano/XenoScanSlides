@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>XenoScan</title>
+    <style>
+      @import url(resources/fonts/DroidSerif.css);
+      @import url(resources/fonts/YanoneKaffeesatz.css);
+      @import url(resources/fonts/UbuntuMono.css);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 25%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+# XenoScan: Scanning Memory Like a Boss
+A peek at a next generation memory scanner.
+.footnote[
+#### Talk by *Nick Cano*
+]
+---
+class: center, middle, inverse
+# Introduction
+---
+layout: false
+class: inverse
+# Nick Cano
+### • 24 years old
+### • Author of *Game Hacking: Developing Autonomous Bots for Online Games*
+### • CEO & Lead Engineer at XenoBot
+### • Senior Security Architect at Cylance
+---
+layout: false
+class: inverse
+# XenoScan
+### • Open-source memory scanner
+### • Written using modern C++ and Lua
+### • Highly extensible
+### • Written with advanced users and automation in mind
+---
+class: inverse
+# Memory Scanner
+<p align="center">
+  <img width="45%" height="65%" src="images/brainscan.png">
+</p>
+---
+class: inverse
+# Memory Scanner
+<p align="center">
+  <img width="45%" height="65%" src="images/brainscan_no.png">
+</p>
+---
+class: inverse
+# Memory Scanner (FIXED)
+<p align="center">
+  <br/><br/><br/><br/><br/>
+  <img width="90%" src="images/Memory Scanner WL.png">
+</p>
+---
+class: inverse
+# Memory Scanner Example
+<p align="center">
+  <br/><br/>
+  <img width="85%" src="images/Memory Scanner Example 1.png">
+</p>
+---
+class: inverse
+# Memory Scanner Example
+<p align="center">
+  <br/><br/>
+  <img width="85%" src="images/Memory Scanner Example 2.png">
+</p>
+---
+class: inverse
+# Memory Scanner Example
+<p align="center">
+  <br/><br/>
+  <img width="85%" src="images/Memory Scanner Example 3.png">
+</p>
+---
+class: inverse
+# Memory Scanner Example
+<p align="center">
+  <br/><br/>
+  <img width="85%" src="images/Memory Scanner Example 4.png">
+</p>
+---
+class: inverse
+# Memory Scanner Example
+<p align="center">
+  <br/><br/>
+  <img width="85%" src="images/Memory Scanner Example 5.png">
+</p>
+---
+class: inverse
+# Memory Scanner Example
+<p align="center">
+  <br/><br/>
+  <img width="85%" src="images/Memory Scanner Example 6.png">
+</p>
+---
+class: inverse
+# Memory Scanner Example
+<p align="center">
+  <br/><br/>
+  <img width="85%" src="images/Memory Scanner Example 7.png">
+</p>
+---
+class: inverse
+# Why Another Memory Scanner?
+## Existing memory scanners don't cut it!
+### • Closed or extremely messy source
+### • Lacking easy-to-make (relatively speaking) features
+### • Lacking vision
+### • Designed for beginners, not as advanced tooling for veterans
+---
+class: inverse
+# Why Are You Telling Us?
+## Because, memory scanners are cool<sup><small><small>1</small></small></sup>!
+### • Extremely powerful, even outside of game hacking
+### • Shows how to work with raw memory at the lowest levels
+### • Uses a specialized subset of appsec skills
+
+.footnote[
+[1] And I'd like to think mine is mega-cool
+]
+---
+class: center, middle, inverse
+# Technical Overview
+---
+class: inverse
+# Languages & Toolchain
+#### Core code is written in *C++* and made accessible through *Lua*.
+#### The code is in a *git* repository; building is facilitated by *CMake*.
+## Initial setup looks something like this (for *Visual Studio*, at least):
+```bash
+> git clone --recursive https://github.com/nickcano/XenoScan.git
+> cd XenoScan
+> buildmsvc2017.bat
+> cd build
+> XenoScan.sln
+```
+## For other environments, it may be like this:
+```bash
+> git clone --recursive https://github.com/nickcano/XenoScan.git
+> cd XenoScan\deps\luajit\src
+> make
+> cd ..\..\..\
+> mkdir build && cd build
+> cmake -G "NMake Makefiles"
+```
+---
+class: inverse
+# Usage
+## Currently, there's no user interface. Usage is via *Lua* scripts, like so:
+
+```lua
+local proc = Process(999)   -- attach to process 999
+proc:newScan()              -- begin a new scan
+
+proc:scanFor(uint32(500))   -- scan for 500
+os.execute("pause")         --     wait for user to press a key
+proc:scanFor(uint32(450))   -- scan for 450
+os.execute("pause")         --     ............................
+proc:scanFor(uint32(550))   -- scan for 450
+
+local r = proc:getResults() -- get results
+print(table.serialize(r))   -- display results
+
+proc:destroy()              -- clean up
+```
+---
+class: inverse
+# Architecture
+<p align="center">
+  <br/><br/><br/><br/>
+  <img width="90%" src="images/Architecture NoLinked.png">
+</p>
+---
+class: inverse
+# Architecture
+<p align="center">
+  <br/><br/><br/><br/>
+  <img width="90%" src="images/Architecture CppLinked.png">
+  <img width="25%" style="position: absolute; top: 67%; left: 11%;" src="images/Architecture Legend.png">
+</p>
+---
+class: inverse
+# Architecture
+<p align="center">
+  <br/><br/><br/><br/>
+  <img width="90%" src="images/Architecture AllLinked.png">
+  <img width="25%" style="position: absolute; top: 67%; left: 11%;" src="images/Architecture Legend.png">
+</p>
+---
+class: center, middle, inverse
+# Basic Functionality
+---
+class: inverse
+# Basic Scanning
+## The basic workflow for scanning is the same, and supports many types:
+- Integral types<sup><small><small>1</small></small></sup>:
+    - `int8_t` / `uint8_t`
+    - `int16_t` / `uint16_t`
+    - `int32_t` / `uint32_t`
+    - `int64_t` / `uint64_t`
+- `float` / `double`
+- `char` / `wchar_t` strings (null-terminated)
+
+## There are also a few operators that can be used during a scan. Best by example:
+```lua
+proc:scanFor(uint32(500))
+proc:scanFor(uint32(500), ">")
+proc:scanFor(uint32(500), ">=")
+```
+
+.footnote[
+[1] Lua frontend may choke on 64-bit integers, but the scanner internally supports them.
+]
+---
+class: inverse
+# Composable Types
+## Additionally, the scanner supports composable types, à la C++ `struct`:
+
+```lua
+attr = struct(
+  uint8("stage"),
+  uint8("level"),
+  int16("x"),
+  int16("y"),
+  uint32("health"),
+  uint32("maxHealth")
+)
+
+attr.stage = 1
+attr.level = 5
+attr.x = 0
+attr.y = 10
+attr.health = 95
+attr.maxHealth = 100
+```
+
+### This supports all integral types, as well as `float` and `double`.
+---
+class: center, middle
+# DEMO
+## Composable Types
+---
+class: inverse
+# Ranges
+## Exact matches aren't necessary, as ranges are supported:
+```lua
+proc:scanFor(uint32(range(500, 1000))) -- scan for a uint32 between 500 and 1000
+proc:scanFor(range(uint32, 500, 1000)) -- same thing, written differently
+```
+## When the type is already implicit, the syntax is even cleaner:
+```lua
+attr.y = range(15, 10) -- must be 10 <= val <= 15
+```
+---
+class: inverse
+# Wildcards
+## When you don't know or don't care what a value is, wildcards can be used:
+```lua
+attr.stage = {} -- can be anything
+```
+### Wildcards can only be part of a structure.
+---
+class: inverse
+# Composable Everything
+```lua
+attr = struct(
+  uint8("stage"),
+  uint8("level"),
+  int16("x"),
+  int16("y"),
+  uint32("health"),
+  uint32("maxHealth")
+)
+
+attr.stage = {}
+attr.level = 5
+attr.x = 0
+attr.y = range(5, 15)
+attr.health = 95
+attr.maxHealth = range(95, 105)
+
+proc:scanFor(attr)
+```
+---
+class: center, middle
+# DEMO
+## Composable Types + Ranges + Wildcards
+---
+class: inverse
+# Variably-typed Values
+## The type system is actually kinda optional<sup><small><small>1</small></small></sup>:
+- `TYPE_MODE_EXACT` is strongly-typed, as we've discussed
+- `TYPE_MODE_TIGHT` is semi-weakly-typed, sticking to similar types
+- `TYPE_MODE_LOOSE` is completely weakly-typed
+
+## That is to say:
+```lua
+proc:scanFor(500, "==", TYPE_MODE_LOOSE)   -- scans for 500 in all numeric[2] and string[3] types
+proc:scanFor(500, "==", TYPE_MODE_TIGHT)   -- scans for 500 as any numeric type
+proc:scanFor("LOL", "==", TYPE_MODE_TIGHT) -- scans for "LOL" as any string type
+```
+
+.footnote[
+[1] Composable types are always `TYPE_MODE_EXACT`, as complexity is otherwise too high.<br/>
+[2] Integral of any size as well as `float` and `double`.<br/>
+[3] Both `char` and `wchar_t` strings.
+]
+---
+class: center, middle, inverse
+# Data Structure Detection
+Identifies data structure of specific types and returns their addresses
+---
+class: inverse
+# Data Structure Assertions
+## Knowing about data structures and memory, we can make a few assertions:
+1. A complex data structure is just an interconnected web of pointers. Specific types of complex data structures tend to exhibit specific shapes of pointer webs.
+2. A process is just a massive super-structure that, in itself, is an interconnected web of pointers.
+
+### Given these assertions, we can hypothetically walk all of the sub-webs within a process, picking out webs which resemble the known blueprints of specific data structures.
+---
+class: inverse
+# Hypothesis -> Implementation
+## Did I say hypothetically? Oh, well not anymore.
+<p align="center">
+  <br/>
+  <img width="90%" src="images/Data Structure Scanner WL.png">
+</p>
+---
+class: inverse
+# Blueprint: Class Instance (native)
+## Here's what we can say for sure about class instances:
+- They should exist in read/write memory.
+- They're typically abstract, and can have virtual functions.
+
+### In other words, the blueprint of a class instance resembles this:
+<p align="center">
+  <br/><br/><br/>
+  <img width="90%" src="images/Class Blueprint NoBubble.png">
+</p>
+---
+class: inverse
+# Blueprint: Class Instance Implementation
+## Since the code for this is relatively small, here it is:
+```C++
+for (auto ptrItr = pointerMap.cbegin(); ptrItr != pointerMap.cend(); ptrItr++) {
+  if (this->isInBlock(readOnlyBlocks, ptrItr->first)) {
+    auto pointed = target->read<MemoryAddress>(ptrItr->first);
+    if (this->isInBlock(executableBlocks, pointed)) {
+      auto instList = ptrItr->second;
+      for (auto inst = instList.begin(); inst != instList.end(); inst++) {
+        auto instAddr = *inst;
+        if (instAddr < moduleStart || instAddr > moduleEnd) {
+          ScannerDataStructureDetails details;
+          details.identifier = instAddr;
+          details.members[VFTableTag] = ptrItr->first;
+          results[this->getTypeName()][instAddr] = details;
+        }
+      }
+    }
+  }
+}
+```
+---
+class: center, middle
+# DEMO
+## Class Instance Detection
+---
+class: inverse
+# Blueprint: Linked List (std::list)
+## Linked lists follow some rules:
+- The first element of each node points to the next node.
+- The second element of each node points to the previous node.
+- The first element of the header node points to the first node.
+- The second element of the header node contains the size.
+
+In other words:
+<p align="center">
+  <img width="87%" src="images/LL Blueprint WL.png">
+</p>
+---
+class: center, middle
+# DEMO
+## Linked List Detection
+---
+class: inverse
+# Blueprint: Binary Tree (std::map)
+## Binary trees also follow some rules:
+- The elements a node respectively point to its left, parent, and right nodes.
+- A node is the root node if `parent.parent == this`.
+- A node is valid if *any* are true:
+  - Node is in a 1 node tree <br/>`left == right && right == parent && parent.parent == this`
+  - Node is in a 2 node tree, left heavy <br/>`left != right && parent.left == left && parent.right == this`
+  - Node is in a 2 node tree, right heavy <br/>`left != right && parent.right == right && parent.left == this`
+  - Node is at bottom of a tree <br/>`left == right && right.parent == right.parent.parent.parent`
+  - Node is a regular node, 2 or more of following must be true:
+      - `left.parent == this`
+      - `right.parent == this`
+      - `parent.left == this || parent.right == this`
+- A tree is valid if *all* are true:
+  - A valid root node exists
+  - Every discoverable node from the root is valid
+  - Each discovered node is unique (except for root)
+---
+class: center, middle
+# DEMO
+## Binary Tree Detection
+---
+class: center, middle, inverse
+# Extensibility
+---
+class: inverse
+# Extensibility Architecture
+## One interface to rule them all:
+```C++
+class ScannerTarget {
+public:
+  virtual bool attach(const ProcessIdentifier &pid) = 0;
+  virtual bool isAttached() const = 0;
+  virtual bool queryMemory(const MemoryAddress &adr, MemoryInformation& meminfo, MemoryAddress &nextAdr) const = 0;
+  virtual bool getMainModuleBounds(MemoryAddress &start, MemoryAddress &end) const = 0;
+protected:
+  bool littleEndian;
+  size_t pointerSize;
+  MemoryAddress lowestAddress, highestAddress;
+  std::set<const std::string> supportedBlueprints;
+
+  virtual bool rawRead(const MemoryAddress &adr,
+                      const size_t objectSize,
+                      void* result) const = 0;
+  virtual bool rawWrite(const MemoryAddress &adr,
+                        const size_t objectSize,
+                        const void* const data) const = 0;
+};
+```
+The core code for the scanner, type system, and script engine is completely platform agnostic. As long as this interface is implemented, the scanner can scan whatever you want.
+---
+class: center, middle
+# DEMO
+## Scanning in an Emulator
+---
+class: center, middle, inverse
+# Future Work
+---
+class: inverse
+# Future Work
+## Additions:
+- Targets for OSX and Linux
+- Targets for all major emulator types
+- Targets for memory dump files
+- Blueprints for many more data structures
+- Symbolic execution (for detecting encrypted memory)
+- User Interface
+
+## Improvements:
+- Native support for strings of fixed-length within composed types
+- Native support for pointers to strings within composed types
+- Support for fixed-length arrays within composed types
+---
+class: center, middle, inverse
+# Use Cases
+Where can XenoScan kick ass, besides game hacking?
+---
+class: inverse
+## Reverse Engineering
+### • Helps to locate chunks of data which may be central to a program's behavior
+### • Provides an otherwise hard-to-grasp glimpse of the relationships between data
+
+## Offense
+### • Hastens the development of attack tools which scan for sensitive data in browsers, mail clients, or password managers
+
+## Research
+### • Allows ease-of-access to running memory, enabling researchers to focus on data and details
+---
+## XenoScan:
+https://github.com/nickcano/XenoScan
+
+## Slides (after the con):
+https://github.com/nickcano/XenoScanSlides
+
+## Me:
+@nickcano93
+
+https://github.com/nickcano
+
+https://www.nostarch.com/gamehacking
+
+## Book Signing
+No Starch Press booth, after this talk
+---
+class: center, middle
+# Questions?
+
+    </textarea>
+    <!-- <script src="remark-release/remark-latest.min.js"> -->
+    <script src="remark.min.js">
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+    <!-- <script src="remark.language.js"></script> -->
+    <script>
+      var slideshow = remark.create({
+          highlightStyle: 'default',
+          highlightLanguage: 'remark',
+          highlightLines: true,
+          ratio: "16:9"
+        }) ;
+    </script>
+  </body>
+</html>
